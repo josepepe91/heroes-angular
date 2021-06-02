@@ -1,0 +1,20 @@
+<h2>{{label}}</h2>
+<form [formGroup]="heroForm" (submit)="submit()">
+  <mat-form-field *ngIf="heroForm.value.id" class="form-field" appearance="outline">
+    <mat-label> Id
+    </mat-label>
+    <input matInput formControlName="id" readonly>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="form-field" appearance="outline">
+    <mat-label> Nombre
+    </mat-label>
+    <input matInput formControlName="name" required>
+    <mat-error *ngIf="heroForm.controls.name.touched && heroForm.controls.name.invalid">
+      <span *ngIf="heroForm.controls.name.errors?.required">Este campo es obligatorio.</span>
+    </mat-error>
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary" type="submit">Guardar</button>
+  </div>
+</form>

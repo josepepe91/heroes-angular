@@ -1,27 +1,26 @@
 # SuperHero
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
+Este proyecto fué generado con [Angular CLI](https://github.com/angular/angular-cli) versión 12.0.2.
 
-## Development server
+## Pasos para levantar el proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecutar `npm install` para la instalación de dependencias
 
-## Code scaffolding
+Ejecutar `npm run json:server` para iniciar el mock server (se ejecutará en el puerto 3000)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Después, en otra consola ejecutar `npm run start` para iniciar el proyecto
 
-## Build
+Abrir en un navegador la dirección : `localhost:4200`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Características del proyecto
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Data obtenida de un mock-server que simula el backend `json-server`, la data se encuentra en `./db.json`
+- Uso de HttpClient para obtención de datos del mock-server
+- Componentes:
+  - Lista de héroes paginada, con buscador y opciones de crear, borrar y eliminar
+  - Edición/creación de héroes con validación de nombre requerido
+  - Dialogo de confirmación de eliminación heroes
+- Interceptor que invoca a componente que indique que se espera la data del servicio asíncrono
+- Uso de Angular Material
+- Uso de Rutas para cada componente
+- Lazy loading para módulo de héroes
